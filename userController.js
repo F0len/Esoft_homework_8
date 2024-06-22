@@ -1,9 +1,10 @@
 let users = [
-    { id: 1, name: 'Alice Johnson', email: 'alice.johnson@example.com', age: 28 },
+    
     { id: 2, name: 'Bob Smith', email: 'bob.smith@example2.com', age: 34 },
     { id: 3, name: 'Charlie Brown', email: 'charlie.brown@example2.com', age: 45 },
     { id: 4, name: 'Eva Davis', email: 'eva.davis@example.com', age: 37 },
     { id: 5, name: 'David Wilson', email: 'david.wilson@example.com', age: 23 },
+    { id: 6, name: 'Alice Davis', email: 'alice.davis@example.com', age: 22 },
     
 ];
 
@@ -39,7 +40,7 @@ const addUser = (req, res) => {
   }
   const newUser = { id: users.length+1, name, email, age };
   users.push(newUser);
-  res.status(HTTP_STATUS.CREATED).json(HTTP_MESSAGE.CREATED_USER);
+  res.status(HTTP_STATUS.CREATED).json({message : HTTP_MESSAGE.CREATED_USER});
 };
 
 const updateUser = (req, res) => {
